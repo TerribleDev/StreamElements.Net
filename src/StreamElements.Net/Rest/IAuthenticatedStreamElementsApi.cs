@@ -5,7 +5,7 @@ using StreamElements.Net.Models;
 
 namespace StreamElements.Net.Rest
 {
-    public interface IAuthenticatedStreamElementsApi
+    internal interface IAuthenticatedStreamElementsApi
     {
         [Get("/activities")]
          Task<IList<Activity>> GetActivitiesAsync();
@@ -26,9 +26,9 @@ namespace StreamElements.Net.Rest
          Task<Result> PostBotSayAsync([Body] object message);
          
          [Get("/bot/levels")]
-         Task<BotLevels> GetBotLevels();
+         Task<BotLevels> GetBotLevelsAsync();
 
          [Post("/bot/levels")]
-         Task<SubmitBotLevelResponse> PostBotLevel([Body] object submit);
+         Task<SubmitBotLevelResponse> PostBotLevelAsync([Body] object submit);
     }
 }

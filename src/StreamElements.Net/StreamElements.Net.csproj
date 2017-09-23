@@ -4,5 +4,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="refit" Version="4.0.1" />
+    <PackageReference Include="UriBuilder.Fluent" Version="1.4.0" />
   </ItemGroup>
 </Project>

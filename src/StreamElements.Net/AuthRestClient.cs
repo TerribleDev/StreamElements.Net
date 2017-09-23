@@ -13,6 +13,7 @@ namespace StreamElements.Net
     {
         private string JwtToken { get; }
         private IAuthenticatedStreamElementsApi Client { get; }
+        private IGenericRestEndpoint<BotCommand,string> BotCommandClient { get; }
         public AuthRestClient(string jwtToken)
         {
             this.JwtToken = jwtToken;
@@ -21,6 +22,7 @@ namespace StreamElements.Net
                 throw new ArgumentNullException(nameof(jwtToken));
             }
             this.Client = BuildHttpClient<IAuthenticatedStreamElementsApi>();
+            BotCommandClient = BuildHttpClient<IGenericRestEndpoint<BotCommand, string>>("bot/commands");
         }
         /// <summary>
         /// Returns a list of activities sorted by createdAt.
@@ -78,7 +80,7 @@ namespace StreamElements.Net
         /// Returns an array of users with levels in your channel.
         /// </summary>
         /// <returns></returns>
-        public Task<BotLevels> GetBotLevels() => Client.GetBotLevels();
+        public Task<BotLevels> GetBotLevels() => Client.GetBotLevelsAsync();
         /// <summary>
         /// Create a new permission for the current channel.
         /// </summary>
@@ -89,11 +91,40 @@ namespace StreamElements.Net
             {
                 throw new ArgumentNullException(nameof(userName));
             }
-            return Client.PostBotLevel(new { username = userName, level = botEnum});
+            return Client.PostBotLevelAsync(new { username = userName, level = botEnum});
         }
-        public override T BuildHttpClient<T>()
+
+        public Task<List<BotCommand>> GetBotCommandsAsync() => BotCommandClient.GetAllAsync();
+
+        public Task<BotCommand> GetBotCommandAsync(string id)
         {
-            var httpClient = new HttpClient() { BaseAddress = new Uri("https://api.streamelements.com/kappa/v1") };
+            if(string.IsNullOrWhiteSpace(id)) throw new ArgumentNullException(nameof(id));
+
+            return BotCommandClient.GetOneAsync(id);
+        }
+
+        public Task<BotCommand> PostBotCommand(BotCommand command)
+        {
+            if(command == null) throw new ArgumentNullException(nameof(command));
+            return BotCommandClient.CreateAsync(command);
+        }
+
+        public Task<BotCommand> PutBotCommand (string id, BotCommand command)
+        {
+            if(string.IsNullOrWhiteSpace(id)) throw new ArgumentNullException(nameof(id));
+            if(command == null) throw new ArgumentNullException(nameof(command));
+            return BotCommandClient.UpdateAsync(id, command);
+        }
+        public Task DeleteCommand(string id)
+        {
+            if(string.IsNullOrWhiteSpace(id)) throw new ArgumentNullException(nameof(id));
+            return BotCommandClient.DeleteAsync(id);
+        }
+        public override T BuildHttpClient<T>(string pathSegment = null)
+        {
+            var builder = new UriBuilder("https://api.streamelements.com/kappa/v1");
+            if(!string.IsNullOrEmpty(pathSegment)) builder.WithPathSegment(pathSegment);
+            var httpClient = new HttpClient() { BaseAddress = builder.Uri };
             httpClient.DefaultRequestHeaders.Add("authorization", $"Bearer {this.JwtToken}");
             return RestService.For<T>(httpClient);
         }

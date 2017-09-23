@@ -7,9 +7,11 @@ namespace StreamElements.Net
 {
     public class RestClient
     {
-        public virtual T BuildHttpClient<T>()
+        public virtual T BuildHttpClient<T>(string pathSegment = null)
         {
-            var httpClient = new HttpClient() { BaseAddress = new Uri("https://api.streamelements.com/kappa/v1") };
+            var builder = new UriBuilder("https://api.streamelements.com/kappa/v1");
+            if(!string.IsNullOrEmpty(pathSegment)) builder.WithPathSegment(pathSegment);
+            var httpClient = new HttpClient() { BaseAddress = builder.Uri };
             return RestService.For<T>(httpClient);
         }
     }
