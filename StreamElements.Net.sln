@@ -1,0 +1,39 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26124.0
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F7E2C1BF-9166-4BE9-BE4B-08BE0CEE439F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamElements.Net", "src\StreamElements.Net\StreamElements.Net.csproj", "{859D5B9E-479D-4374-A600-6706623FD29B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{859D5B9E-479D-4374-A600-6706623FD29B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{859D5B9E-479D-4374-A600-6706623FD29B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{859D5B9E-479D-4374-A600-6706623FD29B}.Debug|x64.ActiveCfg = Debug|x64
+		{859D5B9E-479D-4374-A600-6706623FD29B}.Debug|x64.Build.0 = Debug|x64
+		{859D5B9E-479D-4374-A600-6706623FD29B}.Debug|x86.ActiveCfg = Debug|x86
+		{859D5B9E-479D-4374-A600-6706623FD29B}.Debug|x86.Build.0 = Debug|x86
+		{859D5B9E-479D-4374-A600-6706623FD29B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{859D5B9E-479D-4374-A600-6706623FD29B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{859D5B9E-479D-4374-A600-6706623FD29B}.Release|x64.ActiveCfg = Release|x64
+		{859D5B9E-479D-4374-A600-6706623FD29B}.Release|x64.Build.0 = Release|x64
+		{859D5B9E-479D-4374-A600-6706623FD29B}.Release|x86.ActiveCfg = Release|x86
+		{859D5B9E-479D-4374-A600-6706623FD29B}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{859D5B9E-479D-4374-A600-6706623FD29B} = {F7E2C1BF-9166-4BE9-BE4B-08BE0CEE439F}
+	EndGlobalSection
+EndGlobal
