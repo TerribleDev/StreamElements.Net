@@ -3,19 +3,21 @@ using Refit;
 
 namespace StreamElements.Net.Rest
 {
-    public interface IGenericRestEndpoint<T, in TKey> where T : class
+    public interface IGenericRestEndpoint<T, TResult, in TKey> 
+    where T : class
+    where TResult : class
     {
         [Get("")]
-        Task<System.Collections.Generic.List<T>> GetAllAsync();
+        Task<System.Collections.Generic.List<TResult>> GetAllAsync();
 
         [Get("/{key}")]
-        Task<T> GetOneAsync(TKey key);
+        Task<TResult> GetOneAsync(TKey key);
         
         [Post("")]
-        Task<T> CreateAsync([Body] T paylod);
+        Task<TResult> CreateAsync([Body] T paylod);
 
         [Put("/{key}")]
-        Task<T> UpdateAsync(TKey key, [Body]T payload);
+        Task<TResult> UpdateAsync(TKey key, [Body]T payload);
 
         [Delete("/{key}")]
         Task DeleteAsync(TKey key);

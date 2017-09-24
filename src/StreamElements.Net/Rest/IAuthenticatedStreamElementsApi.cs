@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Refit;
 using StreamElements.Net.Models;
+using StreamElements.Net.Models.Results;
 
 namespace StreamElements.Net.Rest
 {
@@ -30,5 +31,11 @@ namespace StreamElements.Net.Rest
 
          [Post("/bot/levels")]
          Task<SubmitBotLevelResponse> PostBotLevelAsync([Body] object submit);
+
+         [Get("/chatstats")]
+         Task<ChatStatsSettingsResult> GetChatStatsSettings();
+
+         [Put("/chatstats")]
+         Task<ChatStatsSettingsResult> UpdateChatStatsSettings(ChatStatistics stats);
     }
 }

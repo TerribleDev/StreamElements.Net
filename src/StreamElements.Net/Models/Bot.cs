@@ -21,7 +21,7 @@ namespace StreamElements.Net.Models
         public bool Enabled { get; set; }
     }
 
-    public class Stats
+    public class BotStats
     {
 
         [JsonProperty("commands")]
@@ -41,7 +41,7 @@ namespace StreamElements.Net.Models
         public Bot Bot { get; set; }
 
         [JsonProperty("stats")]
-        public Stats Stats { get; set; }
+        public BotStats Stats { get; set; }
     }
 
 }
