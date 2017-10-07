@@ -34,7 +34,7 @@ namespace StreamElements.Net
         }
         public Task<Models.Results.LoyaltyResult> GetLoyalty(string channel)
         {
-            if(string.IsNullOrWhiteSpace(nameof(channel)))
+            if(string.IsNullOrWhiteSpace(channel))
             {
                 throw new ArgumentNullException(nameof(channel));
             }

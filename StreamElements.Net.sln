@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F7E2C1BF-916
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamElements.Net", "src\StreamElements.Net\StreamElements.Net.csproj", "{859D5B9E-479D-4374-A600-6706623FD29B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamElements.Net.UnitTests", "src\StreamElements.Net.UnitTests\StreamElements.Net.UnitTests.csproj", "{353AFA8A-638C-4C58-9AF0-3A446C75B79B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,8 +34,21 @@ Global
 		{859D5B9E-479D-4374-A600-6706623FD29B}.Release|x64.Build.0 = Release|x64
 		{859D5B9E-479D-4374-A600-6706623FD29B}.Release|x86.ActiveCfg = Release|x86
 		{859D5B9E-479D-4374-A600-6706623FD29B}.Release|x86.Build.0 = Release|x86
+		{353AFA8A-638C-4C58-9AF0-3A446C75B79B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{353AFA8A-638C-4C58-9AF0-3A446C75B79B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{353AFA8A-638C-4C58-9AF0-3A446C75B79B}.Debug|x64.ActiveCfg = Debug|x64
+		{353AFA8A-638C-4C58-9AF0-3A446C75B79B}.Debug|x64.Build.0 = Debug|x64
+		{353AFA8A-638C-4C58-9AF0-3A446C75B79B}.Debug|x86.ActiveCfg = Debug|x86
+		{353AFA8A-638C-4C58-9AF0-3A446C75B79B}.Debug|x86.Build.0 = Debug|x86
+		{353AFA8A-638C-4C58-9AF0-3A446C75B79B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{353AFA8A-638C-4C58-9AF0-3A446C75B79B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{353AFA8A-638C-4C58-9AF0-3A446C75B79B}.Release|x64.ActiveCfg = Release|x64
+		{353AFA8A-638C-4C58-9AF0-3A446C75B79B}.Release|x64.Build.0 = Release|x64
+		{353AFA8A-638C-4C58-9AF0-3A446C75B79B}.Release|x86.ActiveCfg = Release|x86
+		{353AFA8A-638C-4C58-9AF0-3A446C75B79B}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{859D5B9E-479D-4374-A600-6706623FD29B} = {F7E2C1BF-9166-4BE9-BE4B-08BE0CEE439F}
+		{353AFA8A-638C-4C58-9AF0-3A446C75B79B} = {F7E2C1BF-9166-4BE9-BE4B-08BE0CEE439F}
 	EndGlobalSection
 EndGlobal
