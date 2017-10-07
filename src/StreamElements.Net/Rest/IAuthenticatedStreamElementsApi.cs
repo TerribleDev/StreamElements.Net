@@ -37,5 +37,8 @@ namespace StreamElements.Net.Rest
 
          [Put("/chatstats")]
          Task<ChatStatsSettingsResult> UpdateChatStatsSettings(ChatStatistics stats);
+
+         [Get("/loyalties")]
+         Task<StreamElements.Net.Models.Results.LoyaltyResult> GetLoyalties();
     }
 }

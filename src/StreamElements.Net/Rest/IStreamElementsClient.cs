@@ -11,5 +11,8 @@ namespace StreamElements.Net.Rest
 
          [Get("/chatstats/stats/{channel}")]
          Task<Models.ChatStats> GetChatStats(string channel);
+         
+         [Get("/loyalties/{channel}")]
+         Task<StreamElements.Net.Models.Results.LoyaltyResult> GetLoyalties(string channel);
     }
 }

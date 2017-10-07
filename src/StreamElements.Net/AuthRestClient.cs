@@ -191,8 +191,10 @@ namespace StreamElements.Net
             }
             return this.AuthClient.UpdateChatStatsSettings(statsistics);
         }
-        
-
+        public Task<LoyaltyResult> GetLoyalty()
+        {
+            return this.AuthClient.GetLoyalties();
+        }
         public override T BuildHttpClient<T>(string pathSegment = null)
         {
             var builder = new UriBuilder("https://api.streamelements.com/kappa/v1");

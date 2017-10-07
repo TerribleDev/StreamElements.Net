@@ -32,6 +32,14 @@ namespace StreamElements.Net
             }
             return Client.GetChatStats(channel);
         }
+        public Task<Models.Results.LoyaltyResult> GetLoyalty(string channel)
+        {
+            if(string.IsNullOrWhiteSpace(nameof(channel)))
+            {
+                throw new ArgumentNullException(nameof(channel));
+            }
+            return this.Client.GetLoyalties(channel);
+        }
         public virtual T BuildHttpClient<T>(string pathSegment = null)
         {
             var builder = new UriBuilder("https://api.streamelements.com/kappa/v1");
